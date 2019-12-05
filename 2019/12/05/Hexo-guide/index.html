@@ -8,16 +8,17 @@
   <title>Hexo guide | Hexo使用指南 | Blog | 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Hexo是基于node的博客生成器，你可以使用md语法进行编写，然后生产静态网页部署。 对于我来说，选择Hexo是一种学习的过程，也是急需一个可以使用的GitHub博客，也是积累经验为自己开发做准备。 初次使用的缺点是，md是通过编译生成静态页面的，也因此添加了额外的标志去解析标签，而不像GitHub是直接渲染md。当然，这也是博客系统的复杂性提出的要求，文档，样式，富文本，资产等是绕不开的话题。">
+<meta name="keywords" content="blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo guide | Hexo使用指南">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;Hexo-guide&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;czzonet.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;Hexo-guide&#x2F;index.html">
 <meta property="og:site_name" content="Blog | 博客">
 <meta property="og:description" content="Hexo是基于node的博客生成器，你可以使用md语法进行编写，然后生产静态网页部署。 对于我来说，选择Hexo是一种学习的过程，也是急需一个可以使用的GitHub博客，也是积累经验为自己开发做准备。 初次使用的缺点是，md是通过编译生成静态页面的，也因此添加了额外的标志去解析标签，而不像GitHub是直接渲染md。当然，这也是博客系统的复杂性提出的要求，文档，样式，富文本，资产等是绕不开的话题。">
-<meta property="og:locale" content="en">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;Hexo-guide&#x2F;Snipaste_2019-12-05_09-02-16.png">
-<meta property="og:updated_time" content="2019-12-05T01:29:27.737Z">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https:&#x2F;&#x2F;czzonet.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;Hexo-guide&#x2F;Snipaste_2019-12-05_09-02-16.png">
+<meta property="og:updated_time" content="2019-12-05T05:25:32.825Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;Hexo-guide&#x2F;Snipaste_2019-12-05_09-02-16.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;czzonet.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;Hexo-guide&#x2F;Snipaste_2019-12-05_09-02-16.png">
   
     <link rel="alternate" href="/atom.xml" title="Blog | 博客" type="application/atom+xml">
   
@@ -41,6 +42,10 @@
         <a href="/" id="logo">Blog | 博客</a>
       </h1>
       
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">黑白色空间</a>
+        </h2>
+      
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
@@ -58,7 +63,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://czzonet.github.io"></form>
       </div>
     </div>
   </div>
@@ -89,7 +94,29 @@
         <p>Hexo是基于node的博客生成器，你可以使用md语法进行编写，然后生产静态网页部署。</p>
 <p>对于我来说，选择Hexo是一种学习的过程，也是急需一个可以使用的GitHub博客，也是积累经验为自己开发做准备。</p>
 <p>初次使用的缺点是，md是通过编译生成静态页面的，也因此添加了额外的标志去解析标签，而不像GitHub是直接渲染md。当然，这也是博客系统的复杂性提出的要求，文档，样式，富文本，资产等是绕不开的话题。能够不使用数据库，如此轻量的解决博客存储问题，已经是相当了不起了。在此感谢Hexo的作者！</p>
-<p>下面是使用方法。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>准备工作：新建<code>[your user name].github.io</code>的存储库。</p>
+<p>安装脚手架</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">yarn global add hexo-cli</span></pre></td></tr></table></figure>
+
+<p>初始化</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mkdir blog</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">hexo init</span></pre></td></tr></table></figure>
+
+<p>添加部署存储库</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">repository:</span> <span class="string">https://github.com/[your</span> <span class="string">user</span> <span class="string">name]/[your</span> <span class="string">user</span> <span class="string">name].github.io</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong> 此处的是博客源文件，那你可以新开一个存储库去存储，和部署的存储库是不同的。（部署的只是public文件夹）</p>
+<p>新建文章</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">'[your title]'</span></span></pre></td></tr></table></figure>
+
+<p>生成html</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">hexo g</span></pre></td></tr></table></figure>
+
+<p>部署到存储库（需要git gui输入用户名密码）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">hexo d</span></pre></td></tr></table></figure>
+
+<p>查看网页效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;[your name].github.io</span></pre></td></tr></table></figure>
+
 <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>全局图片可以放在<code>source/images</code>文件夹，并通过<code>![](/images/image.jpg)</code>进行使用。</p>
 <p>单独的资产文件需要开启选项<code>_config.yml</code>：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span></pre></td></tr></table></figure>
@@ -103,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/05/Hexo-guide/" data-id="ck3s9fmhy0000gwvtfqmr4ax1" class="article-share-link">Share</a>
+      <a data-url="https://czzonet.github.io/2019/12/05/Hexo-guide/" data-id="ck3sadckp0001t4vte0y24sr2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,7 +166,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li></ul>
     </div>
   </div>
 
@@ -175,7 +202,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 Czzonet<br>
+      &copy; 2019 czzonet<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
