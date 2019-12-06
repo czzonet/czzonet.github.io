@@ -45,18 +45,18 @@
   };
 </script>
 
-  <meta name="description" content="主要针对教程openwrt部分，配置网关功能。 实现上网口接内网，下网口接外网可上网的局域网。从而控制经过的流量。 所需文件：  openwrt：  简单的配置过程新建一个3c1g4ghhd的虚拟机，添加上下两个网口。 下载的镜像解压出来，ssh登录并上传服务器，使用镜像转虚拟磁盘工具.&#x2F;img2kvm .&#x2F;xxx.img 100转换到编号为100的虚拟机的硬盘后，添加到虚拟机挂载并设为引导启动。">
+  <meta name="description" content="增加了一些注意事项 .gitignore要添加忽略 1.DS_Store2Thumbs.db3db.json4*.log5node_modules&amp;#x2F;6public&amp;#x2F;7.deploy*&amp;#x2F;8yarn.lock9themes&amp;#x2F;  hexo部署需要安装部署器 1yarn add hexo-deployer-git  主题使用next比较简洁 Reference">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="蜗牛星际pve搭建nas和openwrt">
-<meta property="og:url" content="https:&#x2F;&#x2F;czzonet.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85pve%E6%90%AD%E5%BB%BAnas%E5%92%8Copenwrt&#x2F;index.html">
+<meta property="og:title" content="Hexo guide 2.0 | Hexo指南第二版">
+<meta property="og:url" content="https:&#x2F;&#x2F;czzonet.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;Hexo-guide-2-0-Hexo%E6%8C%87%E5%8D%97%E7%AC%AC%E4%BA%8C%E7%89%88&#x2F;index.html">
 <meta property="og:site_name" content="Blog | 博客">
-<meta property="og:description" content="主要针对教程openwrt部分，配置网关功能。 实现上网口接内网，下网口接外网可上网的局域网。从而控制经过的流量。 所需文件：  openwrt：  简单的配置过程新建一个3c1g4ghhd的虚拟机，添加上下两个网口。 下载的镜像解压出来，ssh登录并上传服务器，使用镜像转虚拟磁盘工具.&#x2F;img2kvm .&#x2F;xxx.img 100转换到编号为100的虚拟机的硬盘后，添加到虚拟机挂载并设为引导启动。">
+<meta property="og:description" content="增加了一些注意事项 .gitignore要添加忽略 1.DS_Store2Thumbs.db3db.json4*.log5node_modules&amp;#x2F;6public&amp;#x2F;7.deploy*&amp;#x2F;8yarn.lock9themes&amp;#x2F;  hexo部署需要安装部署器 1yarn add hexo-deployer-git  主题使用next比较简洁 Reference">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-06T01:27:23.000Z">
+<meta property="og:updated_time" content="2019-12-06T07:33:02.879Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://czzonet.github.io/2019/12/05/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85pve%E6%90%AD%E5%BB%BAnas%E5%92%8Copenwrt/">
+<link rel="canonical" href="https://czzonet.github.io/2019/12/05/Hexo-guide-2-0-Hexo%E6%8C%87%E5%8D%97%E7%AC%AC%E4%BA%8C%E7%89%88/">
 
 
 <script id="page-configurations">
@@ -70,7 +70,7 @@
   };
 </script>
 
-  <title>蜗牛星际pve搭建nas和openwrt | Blog | 博客</title>
+  <title>Hexo guide 2.0 | Hexo指南第二版 | Blog | 博客</title>
   
 
 
@@ -170,7 +170,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://czzonet.github.io/2019/12/05/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85pve%E6%90%AD%E5%BB%BAnas%E5%92%8Copenwrt/">
+    <link itemprop="mainEntityOfPage" href="https://czzonet.github.io/2019/12/05/Hexo-guide-2-0-Hexo%E6%8C%87%E5%8D%97%E7%AC%AC%E4%BA%8C%E7%89%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -183,7 +183,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          蜗牛星际pve搭建nas和openwrt
+          Hexo guide 2.0 | Hexo指南第二版
         </h1>
 
         <div class="post-meta">
@@ -194,7 +194,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-12-05 16:54:09 / 修改时间：17:27:23" itemprop="dateCreated datePublished" datetime="2019-12-05T16:54:09-08:00">2019-12-05</time>
+              <time title="创建时间：2019-12-05 23:27:17 / 修改时间：23:33:02" itemprop="dateCreated datePublished" datetime="2019-12-05T23:27:17-08:00">2019-12-05</time>
             </span>
 
           
@@ -208,21 +208,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>主要针对教程openwrt部分，配置网关功能。</p>
-<p>实现上网口接内网，下网口接外网可上网的局域网。从而控制经过的流量。</p>
-<p>所需文件：</p>
-<ul>
-<li>openwrt：</li>
-</ul>
-<h2 id="简单的配置过程"><a href="#简单的配置过程" class="headerlink" title="简单的配置过程"></a>简单的配置过程</h2><p>新建一个3c1g4ghhd的虚拟机，添加上下两个网口。</p>
-<p>下载的镜像解压出来，ssh登录并上传服务器，使用镜像转虚拟磁盘工具<code>./img2kvm ./xxx.img 100</code>转换到编号为100的虚拟机的硬盘后，添加到虚拟机挂载并设为引导启动。</p>
-<p>登录openwrt，在/etc/config/network里修改ip，重启即可</p>
-<h2 id="配置要点"><a href="#配置要点" class="headerlink" title="配置要点"></a>配置要点</h2><p>经过实践测试，对想法进行验证。</p>
-<p>内网口静态ip，网关也是配置成自己，外网口动态ip即可上网。</p>
-<p>就是这么简单，主要巩固了网络发包的过程，促进协议的理解。</p>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
-<li><a href="https://post.smzdm.com/p/ag89qdw6/" target="_blank" rel="noopener">蜗牛矿渣装机教程 篇一：搞定PVE虚拟机__什么值得买</a></li>
-<li><a href="https://post.smzdm.com/p/adwl903x/" target="_blank" rel="noopener">蜗牛矿渣装机教程 篇二：搞定LEDE软路由__什么值得买</a></li>
+        <p>增加了一些注意事项</p>
+<p>.gitignore要添加忽略</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">.DS_Store</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Thumbs.db</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">db.json</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">*.log</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">node_modules&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">public&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">.deploy*&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">yarn.lock</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">themes&#x2F;</span></pre></td></tr></table></figure>
+
+<p>hexo部署需要安装部署器</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">yarn add hexo-deployer-git</span></pre></td></tr></table></figure>
+
+<p>主题使用next比较简洁</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li><a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener"></a></li>
 </ol>
 
     </div>
@@ -239,12 +234,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/12/05/Hexo-guide/" rel="prev" title="Hexo guide | Hexo使用指南">
-      <i class="fa fa-chevron-left"></i> Hexo guide | Hexo使用指南
+    <a href="/2019/12/05/git-install-git%E7%9A%84%E5%AE%89%E8%A3%85/" rel="prev" title="git install | git的安装">
+      <i class="fa fa-chevron-left"></i> git install | git的安装
     </a></div>
       <div class="post-nav-item">
-    <a href="/2019/12/05/git-install-git%E7%9A%84%E5%AE%89%E8%A3%85/" rel="next" title="git install | git的安装">
-      git install | git的安装 <i class="fa fa-chevron-right"></i>
+    <a href="/2019/12/06/Node-install-Node%E7%9A%84%E5%AE%89%E8%A3%85/" rel="next" title="Node install | Node的安装">
+      Node install | Node的安装 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -283,7 +278,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的配置过程"><span class="nav-number">1.</span> <span class="nav-text">简单的配置过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置要点"><span class="nav-number">2.</span> <span class="nav-text">配置要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">3.</span> <span class="nav-text">References</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.</span> <span class="nav-text">Reference</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
