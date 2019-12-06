@@ -137,13 +137,69 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-06T05:55:13.000Z">2019-12-06</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 142 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/12/06/Yarn-install-Yarn%E7%9A%84%E5%AE%89%E8%A3%85/">Yarn install | Yarn的安装</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>有了 node 后就可以安装 yarn 包管理器</p>
+<p>添加仓库源并安装</p>
+<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -  <span class="hljs-comment"># key</span></span></pre></td></tr></table></figure>
+
+<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">echo</span> <span class="hljs-string">"deb https://dl.yarnpkg.com/debian/ stable main"</span> | sudo tee /etc/apt/sources.list.d/yarn.list  <span class="hljs-comment"># list</span></span></pre></td></tr></table></figure>
+
+<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt install yarn  <span class="hljs-comment"># 安装</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">yarn --version  <span class="hljs-comment"># 检查安装的版本</span></span></pre></td></tr></table></figure>
+
+<h2 id="设置yarn-global-path"><a href="#设置yarn-global-path" class="headerlink" title="设置yarn global path"></a>设置yarn global path</h2><p>添加路径到<code>.bashrc</code>才能使用全局安装的包。</p>
+<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">echo</span> <span class="hljs-string">'export PATH="$(yarn global bin):$PATH"'</span>&gt;&gt;~/.bashrc  <span class="hljs-comment"># 添加路径</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">source</span> ~/.bashrc  <span class="hljs-comment"># 重新载入</span></span></pre></td></tr></table></figure>
+
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<li><a href="https://yarnpkg.com/zh-Hans/docs/install#debian-stable" target="_blank" rel="noopener">安装 | Yarn</a></li>
+<li><a href="https://yarnpkg.com/en/docs/cli/global" target="_blank" rel="noopener">yarn global | Yarn</a></li>
+</ol>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-12-06T05:41:57.000Z">2019-12-06</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 130 个字)
+                    1 分钟 读完 (大约 143 个字)
                 </span>
                 
                 
@@ -161,8 +217,10 @@
 <li><p>Install &amp; Update script</p>
  <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash</span></pre></td></tr></table></figure>
 </li>
-<li><p>简单重启 terminal，或者用手动更新变量</p>
- <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">export</span> NVM_DIR=<span class="hljs-string">"<span class="hljs-variable">$HOME</span>/.nvm"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">[ -s <span class="hljs-string">"<span class="hljs-variable">$NVM_DIR</span>/nvm.sh"</span> ] &amp;&amp; \. <span class="hljs-string">"<span class="hljs-variable">$NVM_DIR</span>/nvm.sh"</span>  <span class="hljs-comment"># This loads nvm</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">[ -s <span class="hljs-string">"<span class="hljs-variable">$NVM_DIR</span>/bash_completion"</span> ] &amp;&amp; \. <span class="hljs-string">"<span class="hljs-variable">$NVM_DIR</span>/bash_completion"</span>  <span class="hljs-comment"># This loads nvm bash_completion</span></span></pre></td></tr></table></figure>
+<li><p>简单重启 terminal，或者用手动更新变量，新建一个<code>run.sh</code></p>
+ <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#!bash</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">export</span> NVM_DIR=<span class="hljs-string">"<span class="hljs-variable">$HOME</span>/.nvm"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">[ -s <span class="hljs-string">"<span class="hljs-variable">$NVM_DIR</span>/nvm.sh"</span> ] &amp;&amp; \. <span class="hljs-string">"<span class="hljs-variable">$NVM_DIR</span>/nvm.sh"</span>  <span class="hljs-comment"># This loads nvm</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">[ -s <span class="hljs-string">"<span class="hljs-variable">$NVM_DIR</span>/bash_completion"</span> ] &amp;&amp; \. <span class="hljs-string">"<span class="hljs-variable">$NVM_DIR</span>/bash_completion"</span>  <span class="hljs-comment"># This loads nvm bash_completion</span></span></pre></td></tr></table></figure>
+
+<p> 使用<code>source ./run.sh</code></p>
 </li>
 <li><p>检查是否成功</p>
  <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">command</span> -v nvm  <span class="hljs-comment"># will output 'nvm'</span></span></pre></td></tr></table></figure>
@@ -480,7 +538,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            5
+                            6
                         </p>
                     </a>
                 </div>
@@ -597,6 +655,25 @@
         
         <article class="media">
             
+            <a href="/2019/12/06/Yarn-install-Yarn%E7%9A%84%E5%AE%89%E8%A3%85/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Yarn install | Yarn的安装">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-06T05:55:13.000Z">2019-12-06</time></div>
+                    <a href="/2019/12/06/Yarn-install-Yarn%E7%9A%84%E5%AE%89%E8%A3%85/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Yarn install | Yarn的安装</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/12/06/Node-install-Node%E7%9A%84%E5%AE%89%E8%A3%85/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Node install | Node的安装">
@@ -671,25 +748,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/12/04/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-04T08:47:41.669Z">2019-12-04</time></div>
-                    <a href="/2019/12/04/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -707,7 +765,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -749,6 +807,25 @@
         
         <article class="media">
             
+            <a href="/2019/12/06/Yarn-install-Yarn%E7%9A%84%E5%AE%89%E8%A3%85/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Yarn install | Yarn的安装">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-06T05:55:13.000Z">2019-12-06</time></div>
+                    <a href="/2019/12/06/Yarn-install-Yarn%E7%9A%84%E5%AE%89%E8%A3%85/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Yarn install | Yarn的安装</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/12/06/Node-install-Node%E7%9A%84%E5%AE%89%E8%A3%85/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Node install | Node的安装">
@@ -823,25 +900,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/12/04/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-04T08:47:41.669Z">2019-12-04</time></div>
-                    <a href="/2019/12/04/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -859,7 +917,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>

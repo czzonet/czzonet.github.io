@@ -10,16 +10,16 @@
 <title>Node install | Node的安装 - Blog | 博客</title>
 
 
-    <meta name="description" content="这里采取 nvm 版本控制器来安装。 nvm Install &amp;amp; Update script  1wget -qO- https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;nvm-sh&#x2F;nvm&#x2F;v0.35.1&#x2F;install.sh | bash  简单重启 terminal，或者用手动更新变量  1export NVM_DIR&#x3D;&quot;$HOME&#x2F;.nvm&quot;2[ -s &quot;$NVM_">
+    <meta name="description" content="这里采取 nvm 版本控制器来安装。 nvm Install &amp;amp; Update script  1wget -qO- https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;nvm-sh&#x2F;nvm&#x2F;v0.35.1&#x2F;install.sh | bash  简单重启 terminal，或者用手动更新变量，新建一个run.sh  1#!bash2export NVM_DIR&#x3D;&quot;$HOME">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node install | Node的安装">
 <meta property="og:url" content="https:&#x2F;&#x2F;czzonet.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;Node-install-Node%E7%9A%84%E5%AE%89%E8%A3%85&#x2F;index.html">
 <meta property="og:site_name" content="Blog | 博客">
-<meta property="og:description" content="这里采取 nvm 版本控制器来安装。 nvm Install &amp;amp; Update script  1wget -qO- https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;nvm-sh&#x2F;nvm&#x2F;v0.35.1&#x2F;install.sh | bash  简单重启 terminal，或者用手动更新变量  1export NVM_DIR&#x3D;&quot;$HOME&#x2F;.nvm&quot;2[ -s &quot;$NVM_">
+<meta property="og:description" content="这里采取 nvm 版本控制器来安装。 nvm Install &amp;amp; Update script  1wget -qO- https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;nvm-sh&#x2F;nvm&#x2F;v0.35.1&#x2F;install.sh | bash  简单重启 terminal，或者用手动更新变量，新建一个run.sh  1#!bash2export NVM_DIR&#x3D;&quot;$HOME">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;czzonet.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-12-06T05:42:27.817Z">
+<meta property="og:updated_time" content="2019-12-06T05:49:41.610Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;czzonet.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -143,7 +143,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 130 个字)
+                    1 分钟 读完 (大约 143 个字)
                 </span>
                 
                 
@@ -161,8 +161,10 @@
 <li><p>Install &amp; Update script</p>
  <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash</span></pre></td></tr></table></figure>
 </li>
-<li><p>简单重启 terminal，或者用手动更新变量</p>
- <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">export</span> NVM_DIR=<span class="hljs-string">"<span class="hljs-variable">$HOME</span>/.nvm"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">[ -s <span class="hljs-string">"<span class="hljs-variable">$NVM_DIR</span>/nvm.sh"</span> ] &amp;&amp; \. <span class="hljs-string">"<span class="hljs-variable">$NVM_DIR</span>/nvm.sh"</span>  <span class="hljs-comment"># This loads nvm</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">[ -s <span class="hljs-string">"<span class="hljs-variable">$NVM_DIR</span>/bash_completion"</span> ] &amp;&amp; \. <span class="hljs-string">"<span class="hljs-variable">$NVM_DIR</span>/bash_completion"</span>  <span class="hljs-comment"># This loads nvm bash_completion</span></span></pre></td></tr></table></figure>
+<li><p>简单重启 terminal，或者用手动更新变量，新建一个<code>run.sh</code></p>
+ <figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#!bash</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">export</span> NVM_DIR=<span class="hljs-string">"<span class="hljs-variable">$HOME</span>/.nvm"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">[ -s <span class="hljs-string">"<span class="hljs-variable">$NVM_DIR</span>/nvm.sh"</span> ] &amp;&amp; \. <span class="hljs-string">"<span class="hljs-variable">$NVM_DIR</span>/nvm.sh"</span>  <span class="hljs-comment"># This loads nvm</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">[ -s <span class="hljs-string">"<span class="hljs-variable">$NVM_DIR</span>/bash_completion"</span> ] &amp;&amp; \. <span class="hljs-string">"<span class="hljs-variable">$NVM_DIR</span>/bash_completion"</span>  <span class="hljs-comment"># This loads nvm bash_completion</span></span></pre></td></tr></table></figure>
+
+<p> 使用<code>source ./run.sh</code></p>
 </li>
 <li><p>检查是否成功</p>
  <figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">command</span> -v nvm  <span class="hljs-comment"># will output 'nvm'</span></span></pre></td></tr></table></figure>
@@ -189,6 +191,13 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/12/06/Yarn-install-Yarn%E7%9A%84%E5%AE%89%E8%A3%85/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Yarn install | Yarn的安装</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -247,7 +256,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            5
+                            6
                         </p>
                     </a>
                 </div>
@@ -364,6 +373,25 @@
         
         <article class="media">
             
+            <a href="/2019/12/06/Yarn-install-Yarn%E7%9A%84%E5%AE%89%E8%A3%85/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Yarn install | Yarn的安装">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-06T05:55:13.000Z">2019-12-06</time></div>
+                    <a href="/2019/12/06/Yarn-install-Yarn%E7%9A%84%E5%AE%89%E8%A3%85/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Yarn install | Yarn的安装</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/12/06/Node-install-Node%E7%9A%84%E5%AE%89%E8%A3%85/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Node install | Node的安装">
@@ -438,25 +466,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/12/04/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-04T08:47:41.669Z">2019-12-04</time></div>
-                    <a href="/2019/12/04/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -474,7 +483,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -516,6 +525,25 @@
         
         <article class="media">
             
+            <a href="/2019/12/06/Yarn-install-Yarn%E7%9A%84%E5%AE%89%E8%A3%85/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Yarn install | Yarn的安装">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-06T05:55:13.000Z">2019-12-06</time></div>
+                    <a href="/2019/12/06/Yarn-install-Yarn%E7%9A%84%E5%AE%89%E8%A3%85/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Yarn install | Yarn的安装</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/12/06/Node-install-Node%E7%9A%84%E5%AE%89%E8%A3%85/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Node install | Node的安装">
@@ -590,25 +618,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/12/04/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-04T08:47:41.669Z">2019-12-04</time></div>
-                    <a href="/2019/12/04/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -626,7 +635,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
