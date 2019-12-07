@@ -171,6 +171,80 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://czzonet.github.io/2019/12/07/postgresql%E7%9A%84%E5%AE%89%E8%A3%85%E5%9C%A8ubuntu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="czzonet">
+      <meta itemprop="description" content="技术经验分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | 博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/07/postgresql%E7%9A%84%E5%AE%89%E8%A3%85%E5%9C%A8ubuntu/" class="post-title-link" itemprop="url">postgresql的安装在ubuntu</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-07 12:38:42 / 修改时间：13:22:52" itemprop="dateCreated datePublished" datetime="2019-12-07T12:38:42+08:00">2019-12-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <img src="/2019/12/07/postgresql%E7%9A%84%E5%AE%89%E8%A3%85%E5%9C%A8ubuntu/Snipaste_2019-12-07_13-20-56.png" class="" title="exampel picture">
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>ubuntu18.04下的安装</p>
+<p>添加仓库源并安装</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -  <span class="comment"># add key</span></span></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main"</span> | sudo tee /etc/apt/sources.list.d/pgdg.list  <span class="comment"># add list</span></span></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt install postgresql-11  <span class="comment"># 安装</span></span></pre></td></tr></table></figure>
+
+<h2 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h2><p>配置一下默认的postgres用户的密码，登陆数据库要用到。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo -u postgres psql</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">\password</span></pre></td></tr></table></figure>
+
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<li><a href="https://www.postgresql.org/download/linux/ubuntu/" target="_blank" rel="noopener">PostgreSQL: Linux downloads (Ubuntu)</a></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://czzonet.github.io/2019/12/07/cygwin%E7%9A%84%E5%BD%BB%E5%BA%95%E5%88%A0%E9%99%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -818,86 +892,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://czzonet.github.io/2019/12/05/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85pve%E6%90%AD%E5%BB%BAnas%E5%92%8Copenwrt/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="czzonet">
-      <meta itemprop="description" content="技术经验分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | 博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/05/%E8%9C%97%E7%89%9B%E6%98%9F%E9%99%85pve%E6%90%AD%E5%BB%BAnas%E5%92%8Copenwrt/" class="post-title-link" itemprop="url">蜗牛星际pve搭建nas和openwrt</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-05 16:54:09" itemprop="dateCreated datePublished" datetime="2019-12-05T16:54:09+08:00">2019-12-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-06 09:27:23" itemprop="dateModified" datetime="2019-12-06T09:27:23+08:00">2019-12-06</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>主要针对教程openwrt部分，配置网关功能。</p>
-<p>实现上网口接内网，下网口接外网可上网的局域网。从而控制经过的流量。</p>
-<p>所需文件：</p>
-<ul>
-<li>openwrt：</li>
-</ul>
-<h2 id="简单的配置过程"><a href="#简单的配置过程" class="headerlink" title="简单的配置过程"></a>简单的配置过程</h2><p>新建一个3c1g4ghhd的虚拟机，添加上下两个网口。</p>
-<p>下载的镜像解压出来，ssh登录并上传服务器，使用镜像转虚拟磁盘工具<code>./img2kvm ./xxx.img 100</code>转换到编号为100的虚拟机的硬盘后，添加到虚拟机挂载并设为引导启动。</p>
-<p>登录openwrt，在/etc/config/network里修改ip，重启即可</p>
-<h2 id="配置要点"><a href="#配置要点" class="headerlink" title="配置要点"></a>配置要点</h2><p>经过实践测试，对想法进行验证。</p>
-<p>内网口静态ip，网关也是配置成自己，外网口动态ip即可上网。</p>
-<p>就是这么简单，主要巩固了网络发包的过程，促进协议的理解。</p>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
-<li><a href="https://post.smzdm.com/p/ag89qdw6/" target="_blank" rel="noopener">蜗牛矿渣装机教程 篇一：搞定PVE虚拟机__什么值得买</a></li>
-<li><a href="https://post.smzdm.com/p/adwl903x/" target="_blank" rel="noopener">蜗牛矿渣装机教程 篇二：搞定LEDE软路由__什么值得买</a></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -946,7 +940,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
