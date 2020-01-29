@@ -171,6 +171,221 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://czzonet.github.io/2019/12/06/chrome%E5%BC%BA%E5%88%B6%E4%B8%8D%E4%BD%BF%E7%94%A8%E7%BC%93%E5%AD%98%E5%88%B7%E6%96%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="czzonet">
+      <meta itemprop="description" content="技术经验分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | 博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/06/chrome%E5%BC%BA%E5%88%B6%E4%B8%8D%E4%BD%BF%E7%94%A8%E7%BC%93%E5%AD%98%E5%88%B7%E6%96%B0/" class="post-title-link" itemprop="url">chrome强制不使用缓存刷新</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-06 17:01:42 / 修改时间：17:04:39" itemprop="dateCreated datePublished" datetime="2019-12-06T17:01:42+08:00">2019-12-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>快捷键：Windows和Linux操作系统: Shift+F5 或 Ctrl+Shift+R</p>
+<p>或者，用F12打开”开发者工具”，然后Refresh按扭上就有右键菜单了，在弹出菜单上选择”清空缓存并硬件加载”</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<li><a href="https://blog.csdn.net/fu415037685/article/details/81296403" target="_blank" rel="noopener">Chrome浏览器强制刷新页面(不使用缓存) - 付博瀚</a></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://czzonet.github.io/2019/12/06/Yarn-install-Yarn%E7%9A%84%E5%AE%89%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="czzonet">
+      <meta itemprop="description" content="技术经验分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | 博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/06/Yarn-install-Yarn%E7%9A%84%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">Yarn install | Yarn的安装</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-06 13:55:13 / 修改时间：13:55:32" itemprop="dateCreated datePublished" datetime="2019-12-06T13:55:13+08:00">2019-12-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>有了 node 后就可以安装 yarn 包管理器</p>
+<p>添加仓库源并安装</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -  <span class="comment"># key</span></span></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"deb https://dl.yarnpkg.com/debian/ stable main"</span> | sudo tee /etc/apt/sources.list.d/yarn.list  <span class="comment"># list</span></span></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt install yarn  <span class="comment"># 安装</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">yarn --version  <span class="comment"># 检查安装的版本</span></span></pre></td></tr></table></figure>
+
+<h2 id="设置yarn-global-path"><a href="#设置yarn-global-path" class="headerlink" title="设置yarn global path"></a>设置yarn global path</h2><p>添加路径到<code>.bashrc</code>才能使用全局安装的包。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'export PATH="$(yarn global bin):$PATH"'</span>&gt;&gt;~/.bashrc  <span class="comment"># 添加路径</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc  <span class="comment"># 重新载入</span></span></pre></td></tr></table></figure>
+
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<li><a href="https://yarnpkg.com/zh-Hans/docs/install#debian-stable" target="_blank" rel="noopener">安装 | Yarn</a></li>
+<li><a href="https://yarnpkg.com/en/docs/cli/global" target="_blank" rel="noopener">yarn global | Yarn</a></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://czzonet.github.io/2019/12/06/Node-install-Node%E7%9A%84%E5%AE%89%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="czzonet">
+      <meta itemprop="description" content="技术经验分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | 博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/06/Node-install-Node%E7%9A%84%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">Node install | Node的安装</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-06 13:41:57 / 修改时间：13:49:41" itemprop="dateCreated datePublished" datetime="2019-12-06T13:41:57+08:00">2019-12-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>这里采取 nvm 版本控制器来安装。</p>
+<h2 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h2><ol>
+<li><p>Install &amp; Update script</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash</span></pre></td></tr></table></figure>
+</li>
+<li><p>简单重启 terminal，或者用手动更新变量，新建一个<code>run.sh</code></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#!bash</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">"<span class="variable">$HOME</span>/.nvm"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">[ -s <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span> ] &amp;&amp; \. <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span>  <span class="comment"># This loads nvm</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">[ -s <span class="string">"<span class="variable">$NVM_DIR</span>/bash_completion"</span> ] &amp;&amp; \. <span class="string">"<span class="variable">$NVM_DIR</span>/bash_completion"</span>  <span class="comment"># This loads nvm bash_completion</span></span></pre></td></tr></table></figure>
+
+<p> 使用<code>source ./run.sh</code></p>
+</li>
+<li><p>检查是否成功</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> -v nvm  <span class="comment"># will output 'nvm'</span></span></pre></td></tr></table></figure>
+</li>
+<li><p>安装长期支持版的 node</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">nvm install --lts</span></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<li><a href="https://github.com/nvm-sh/nvm#install-script" target="_blank" rel="noopener">nvm-sh/nvm: Node Version Manager - Simple bash script to manage multiple active node.js versions</a></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://czzonet.github.io/2019/12/05/Hexo-guide-2-0-Hexo%E6%8C%87%E5%8D%97%E7%AC%AC%E4%BA%8C%E7%89%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -571,7 +786,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -602,7 +817,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

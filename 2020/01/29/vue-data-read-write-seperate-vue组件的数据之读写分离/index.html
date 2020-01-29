@@ -45,18 +45,18 @@
   };
 </script>
 
-  <meta name="description" content="增加了一些注意事项 .gitignore要添加忽略 1.DS_Store2Thumbs.db3db.json4*.log5node_modules&amp;#x2F;6public&amp;#x2F;7.deploy*&amp;#x2F;8yarn.lock9themes&amp;#x2F;  hexo部署需要安装部署器 1yarn add hexo-deployer-git  部署历史文件保留在&#x2F;.deploy_git 主题使">
+  <meta name="description" content="vue 组件传值只能有单向数据流，即子组件只能通过事件来通知父组件的数据改变。 对于高度复杂组件，多层嵌套与多个平行，事件无法处理。 考虑以下情况：任意组件要能在任意时刻获取任意其他组件的实时数据。 组件数据交互，必然使用 vuex。 1.0 节流更新组件改动会同步到 state,state 的改动也会同步到组件，并通过判等节流防止死循环。 1.0 缺点实现复杂，需要监听本地和监听 state，分">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo guide 2.0 | Hexo指南第二版">
-<meta property="og:url" content="https:&#x2F;&#x2F;czzonet.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;Hexo-guide-2-0-Hexo%E6%8C%87%E5%8D%97%E7%AC%AC%E4%BA%8C%E7%89%88&#x2F;index.html">
+<meta property="og:title" content="vue-data-read-write-seperate|vue组件的数据之读写分离">
+<meta property="og:url" content="https:&#x2F;&#x2F;czzonet.github.io&#x2F;2020&#x2F;01&#x2F;29&#x2F;vue-data-read-write-seperate-vue%E7%BB%84%E4%BB%B6%E7%9A%84%E6%95%B0%E6%8D%AE%E4%B9%8B%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB&#x2F;index.html">
 <meta property="og:site_name" content="Blog | 博客">
-<meta property="og:description" content="增加了一些注意事项 .gitignore要添加忽略 1.DS_Store2Thumbs.db3db.json4*.log5node_modules&amp;#x2F;6public&amp;#x2F;7.deploy*&amp;#x2F;8yarn.lock9themes&amp;#x2F;  hexo部署需要安装部署器 1yarn add hexo-deployer-git  部署历史文件保留在&#x2F;.deploy_git 主题使">
+<meta property="og:description" content="vue 组件传值只能有单向数据流，即子组件只能通过事件来通知父组件的数据改变。 对于高度复杂组件，多层嵌套与多个平行，事件无法处理。 考虑以下情况：任意组件要能在任意时刻获取任意其他组件的实时数据。 组件数据交互，必然使用 vuex。 1.0 节流更新组件改动会同步到 state,state 的改动也会同步到组件，并通过判等节流防止死循环。 1.0 缺点实现复杂，需要监听本地和监听 state，分">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-06T09:07:23.000Z">
+<meta property="og:updated_time" content="2020-01-29T07:25:57.055Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://czzonet.github.io/2019/12/05/Hexo-guide-2-0-Hexo%E6%8C%87%E5%8D%97%E7%AC%AC%E4%BA%8C%E7%89%88/">
+<link rel="canonical" href="https://czzonet.github.io/2020/01/29/vue-data-read-write-seperate-vue%E7%BB%84%E4%BB%B6%E7%9A%84%E6%95%B0%E6%8D%AE%E4%B9%8B%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/">
 
 
 <script id="page-configurations">
@@ -70,7 +70,7 @@
   };
 </script>
 
-  <title>Hexo guide 2.0 | Hexo指南第二版 | Blog | 博客</title>
+  <title>vue-data-read-write-seperate|vue组件的数据之读写分离 | Blog | 博客</title>
   
 
 
@@ -172,7 +172,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://czzonet.github.io/2019/12/05/Hexo-guide-2-0-Hexo%E6%8C%87%E5%8D%97%E7%AC%AC%E4%BA%8C%E7%89%88/">
+    <link itemprop="mainEntityOfPage" href="https://czzonet.github.io/2020/01/29/vue-data-read-write-seperate-vue%E7%BB%84%E4%BB%B6%E7%9A%84%E6%95%B0%E6%8D%AE%E4%B9%8B%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -185,7 +185,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hexo guide 2.0 | Hexo指南第二版
+          vue-data-read-write-seperate|vue组件的数据之读写分离
         </h1>
 
         <div class="post-meta">
@@ -194,16 +194,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-12-05 23:27:17" itemprop="dateCreated datePublished" datetime="2019-12-05T23:27:17+08:00">2019-12-05</time>
+              <time title="创建时间：2020-01-29 14:39:02 / 修改时间：15:25:57" itemprop="dateCreated datePublished" datetime="2020-01-29T14:39:02+08:00">2020-01-29</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-06 17:07:23" itemprop="dateModified" datetime="2019-12-06T17:07:23+08:00">2019-12-06</time>
-              </span>
 
           
 
@@ -216,26 +210,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>增加了一些注意事项</p>
-<p>.gitignore要添加忽略</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">.DS_Store</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Thumbs.db</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">db.json</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">*.log</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">node_modules&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">public&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">.deploy*&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">yarn.lock</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">themes&#x2F;</span></pre></td></tr></table></figure>
-
-<p>hexo部署需要安装部署器</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">yarn add hexo-deployer-git</span></pre></td></tr></table></figure>
-
-<p>部署历史文件保留在<code>/.deploy_git</code></p>
-<p>主题使用next比较简洁，并且配置机制容易保存。</p>
-<p>安装主题</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span></pre></td></tr></table></figure>
-
-<p>配置把<code>/themes/next/_config.yml</code>复制到<code>/source/_data/next.yml</code>并设置</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="string">override：</span> <span class="literal">true</span></span></pre></td></tr></table></figure>
-
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
-<li><a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">hexojs/hexo-deployer-git: Git deployer plugin for Hexo.</a></li>
-<li><a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md" target="_blank" rel="noopener">hexo-theme-next/DATA-FILES.md at master · theme-next/hexo-theme-next</a></li>
-<li><a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">theme-next/hexo-theme-next: Elegant and powerful theme for Hexo.</a></li>
-</ol>
+        <p>vue 组件传值只能有单向数据流，即子组件只能通过事件来通知父组件的数据改变。</p>
+<p>对于高度复杂组件，多层嵌套与多个平行，事件无法处理。</p>
+<p>考虑以下情况：任意组件要能在任意时刻获取任意其他组件的实时数据。</p>
+<p>组件数据交互，必然使用 vuex。</p>
+<h2 id="1-0-节流更新"><a href="#1-0-节流更新" class="headerlink" title="1.0 节流更新"></a>1.0 节流更新</h2><p>组件改动会同步到 state,state 的改动也会同步到组件，并通过判等节流防止死循环。</p>
+<h3 id="1-0-缺点"><a href="#1-0-缺点" class="headerlink" title="1.0 缺点"></a>1.0 缺点</h3><p>实现复杂，需要监听本地和监听 state，分别判等赋值实现同步。每多一个数据，就要多一对对应操作。</p>
+<h2 id="2-0-读写分离"><a href="#2-0-读写分离" class="headerlink" title="2.0 读写分离"></a>2.0 读写分离</h2><p>组件挂载后提交组件 this 指针到 state，用于读取，state 的其他数据会同步到组件，用于写入。并且注意写入 state 后不应立刻读取，应该把该数值传参到需要立即读取的地方，以避免脏读。</p>
+<h3 id="2-0-优点"><a href="#2-0-优点" class="headerlink" title="2.0 优点"></a>2.0 优点</h3><p>简单直观，没有侵入性</p>
+<h3 id="2-0-缺点"><a href="#2-0-缺点" class="headerlink" title="2.0 缺点"></a>2.0 缺点</h3><p>只是需要一些注意：</p>
+<ul>
+<li>不要直接改动 this 的数据，应该是用作只读的。</li>
+<li>写入之后需要立刻读取的情况，应该直接传值而不要再从组件 this 里读取，因为可能未完成监听同步造成脏读。</li>
+</ul>
 
     </div>
 
@@ -251,13 +238,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/12/05/git-install-git%E7%9A%84%E5%AE%89%E8%A3%85/" rel="prev" title="git install | git的安装">
-      <i class="fa fa-chevron-left"></i> git install | git的安装
+    <a href="/2019/12/10/vue-prop-sync-vue-prop%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%E5%90%8C%E6%AD%A5/" rel="prev" title="vue prop sync | vue prop组件传值同步">
+      <i class="fa fa-chevron-left"></i> vue prop sync | vue prop组件传值同步
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/12/06/Node-install-Node%E7%9A%84%E5%AE%89%E8%A3%85/" rel="next" title="Node install | Node的安装">
-      Node install | Node的安装 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -295,7 +279,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-0-节流更新"><span class="nav-number">1.</span> <span class="nav-text">1.0 节流更新</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-0-缺点"><span class="nav-number">1.1.</span> <span class="nav-text">1.0 缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-0-读写分离"><span class="nav-number">2.</span> <span class="nav-text">2.0 读写分离</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-0-优点"><span class="nav-number">2.1.</span> <span class="nav-text">2.0 优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-0-缺点"><span class="nav-number">2.2.</span> <span class="nav-text">2.0 缺点</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
